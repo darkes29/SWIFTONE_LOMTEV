@@ -30,3 +30,24 @@ else{
     print("X1 равен \(x1!)")
     print("X2 равен \(x1!)")
 }
+//Даны катеты прямоугольного треугольника. Найти площадь, периметр и гипотенузу треугольника
+print("Введите катет a: ")
+var cat_a = readLine();
+print("Введите катет b: ")
+var cat_b = readLine();
+var gip: Double = 0.0
+
+gip = sqrt(pow(Double(cat_a!)!, 2) + pow(Double(cat_b!)!, 2))
+let perimetr: Double = gip + Double(cat_a!)! + Double(cat_b!)!
+print("Катет прямоугольного треугольника равен: \(gip)")
+print("Периметр прямоугольного треугольника равен: \(perimetr)")
+
+//Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5 лет
+print("Введите сумму первоначально депозита: ")
+let first_deposit = readLine()
+print("Введите годовой процент по вкладу: ")
+let procent = readLine()
+let srok_vklada: Double = 365 * 5
+var final_deposit: Double = Double(first_deposit!)! * (1 + srok_vklada * ((Double(procent!)!)/(100*365)))
+print("К выплате с учетом начисленных процентов \(round((final_deposit-Double(first_deposit!)!)*100)/100) рублей подлежит: ")
+print("\(round(final_deposit*100)/100) рублей")
