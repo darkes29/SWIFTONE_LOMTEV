@@ -14,10 +14,25 @@ struct SportCar {
     var mark: String
     var year: Int
     var volume_of_bag: Double
-    init(mark: String, year: Int, volume_of_bag: Double){
+    enum Engine_state {
+        case Run
+        case Stop
+    }
+    var engine_state: Engine_state{
+        willSet{
+            if newValue == .Run {
+                print("Двигатель запущен")
+            }
+            else {
+                print("Двигатель остановлен")
+            }
+        }
+    }
+    init(mark: String, year: Int, volume_of_bag: Double, engine_state: Engine_state){
         self.mark = mark
         self.year = year
         self.volume_of_bag = volume_of_bag
+        self.engine_state = engine_state
     }
     
     
@@ -28,5 +43,6 @@ struct TrunkCar {
     
     
 }
-var porche = SportCar(mark: "911", year: 1991, volume_of_bag: 23.12)
-print(porche)
+var porche = SportCar(mark: "911", year: 1991, volume_of_bag: 23.12, engine_state: .Run)
+porche.engine_state = .Run
+porche.engine_state = .Stop
